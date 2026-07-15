@@ -39,6 +39,9 @@ provider = _cfg_raw.get("provider", "anthropic")
 # ── 1. 环境变量 ──────────────────────────────────
 section("GitHub Secrets")
 llm_key_name = "GEMINI_API_KEY" if provider == "gemini" else "ANTHROPIC_API_KEY"
+print(f"Provider - {provider}")
+print(f"llm_key_name - {llm_key_name}")
+print(f"Key - {os.getenv(llm_key_name)}")
 required_secrets = {
     llm_key_name:        os.getenv(llm_key_name),
     "GMAIL_USER":        os.getenv("GMAIL_USER"),
